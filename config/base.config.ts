@@ -1,5 +1,11 @@
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import vue from "@vitejs/plugin-vue";
+import Components from 'unplugin-vue-components/vite'
+import {
+  AntDesignVueResolver,
+  ElementPlusResolver,
+  VantResolver,
+} from 'unplugin-vue-components/resolvers'
 import inject from '@rollup/plugin-inject';
 import path from 'path';
 
@@ -25,6 +31,15 @@ export default {
     inject({
       $API: API_ENTRY_PATH,
       createStore: STORE_ENTRY_PATH
+    }),
+    Components({
+      resolvers: [
+        AntDesignVueResolver({
+          importStyle: 'less',
+        }),
+        ElementPlusResolver(),
+        VantResolver(),
+      ],
     })
   ]
 }

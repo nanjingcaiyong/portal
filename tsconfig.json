@@ -33,7 +33,8 @@
       "@UI/*": [
         "Shopify-UI/*"
       ]
-    }
+    },
+    "types": ["vite/client"]
   },
   "ts-node": {
     "compilerOptions": {
